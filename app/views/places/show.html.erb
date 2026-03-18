@@ -11,6 +11,9 @@
     <div class="col-12 col-md-6 col-lg-4">
       <div class="card h-100">
         <div class="card-body">
+          <% if entry.uploaded_image.attached? %>
+            <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid mb-3" alt="<%= entry["title"] %>">
+          <% end %>
           <h2 class="h5 card-title"><%= entry["title"] %></h2>
           <div class="text-muted mb-2"><%= entry["occurred_on"] %></div>
           <p class="card-text mb-0"><%= entry["description"] %></p>
