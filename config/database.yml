@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: dk_journal_hw4_production
+  username: dk_journal_hw4
+  password: <%= ENV["DK_JOURNAL_HW4_DATABASE_PASSWORD"] %>
